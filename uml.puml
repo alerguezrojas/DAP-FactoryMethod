@@ -1,0 +1,37 @@
+@startuml
+class BarcoCreator {
+# Transporte crearTransporte()
+}
+
+class Barco {
++ String entregar()
+}
+
+class Main {
++ {static} void main(String[])
+}
+
+class CamionCreator {
+# Transporte crearTransporte()
+}
+
+interface Transporte {
+~ String entregar()
+}
+
+class Camion {
++ String entregar()
+}
+
+abstract class CreadorEnvio {
+# {abstract}Transporte crearTransporte()
++ String planEntrega()
+}
+
+
+
+CreadorEnvio <|-- BarcoCreator
+Transporte <|.. Barco
+CreadorEnvio <|-- CamionCreator
+Transporte <|.. Camion
+@enduml
